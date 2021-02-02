@@ -52,6 +52,7 @@ function formatDate(timestamp) {
     iconElement.setAttribute("alt", response.data.weather[0].description);
   }
 
+
   function dispalyForecast(response) {
     let forecastElement = document.querySelector("#forecast");
     forecastElement.innerHTML = null;
@@ -79,6 +80,7 @@ function formatDate(timestamp) {
     `;
     }
   }
+
 
   function search(city) {
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
@@ -112,3 +114,18 @@ function formatDate(timestamp) {
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
   }
+
+
+
+  let celsiusTemperature = null;
+
+  let form = document.querySelector("#search-form");
+  form.addEventListener("submit", handleSubmit);
+  
+  let fahrenheitLink = document.querySelector("#fahrenheit-link");
+  fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+  
+  let celsiusLink = document.querySelector("#celsius-link");
+  celsiusLink.addEventListener("click", displayCelsiusTemperature);
+  
+  search("New York");
