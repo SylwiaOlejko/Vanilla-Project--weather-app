@@ -94,3 +94,13 @@ function formatDate(timestamp) {
     let cityInputElement = document.querySelector("#city-input");
     search(cityInputElement.value);
   }
+
+  function displayFahrenheitTemperature(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+  
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+  }
