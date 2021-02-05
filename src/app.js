@@ -1,7 +1,15 @@
-let apiKey = "9f2c64f1ec67e9d10d3043d48f9aa497";
-let apiUrl = "api.openweathermap.org/data/2.5/weather?q=New York,uk&appid={API key}";
 
-console.log(apiUrl);
+
+function displayTemperature(response){
+console.log(response.data.main.temp);
+
+}
+
+let apiKey = "9f2c64f1ec67e9d10d3043d48f9aa497";
+let apiUrl = 'api.openweathermap.org/data/2.5/weather?q=New York,uk&appid={API key}&units=metric';
+
+
+axios.get(apiUrl).then(displayTemperature);
 
 
 /*function formatDate(timestamp) {
